@@ -8,9 +8,8 @@
     font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
     font-size: medium;
     color: rgb(55, 53, 47);
-    
     text-align: center;
-    line-height: 1.5;
+    line-height: 5;
 
 }
 
@@ -35,7 +34,7 @@ body{
 
     var currentdate = new Date();
     var quotenumber = currentdate.getDay();
-    document.getElementById('lbl').innerHTML = `<div> ${quoteArray[quotenumber]}</div>`;
+    document.getElementById('lbl').innerHTML = `<div><b> ${quoteArray[quotenumber]}</b></div>`;
 
 </script> 
 </html>
