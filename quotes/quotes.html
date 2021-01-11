@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html> 
+
+<head>
+    <title>Quotes</title> 
+    <style>
+.textStyle {
+    font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+    font-size: large;
+    color: rgb(55, 53, 47);
+    
+    text-align: center;
+    line-height: 1.5;
+
+}
+
+body{
+    background: rgba(235, 236, 237, 0.3)
+}
+    </style>
+</head>
+<body>
+    <div id="lbl" class="textStyle" ></div>
+</body>
+
+<script type="text/javascript">
+    var quoteArray = []
+    quoteArray[0] = "Be a Girl with a mind, a Woman with attitude, and a Lady with class."
+    quoteArray[1] = "🐢 she does not know what the future holds, but she is grateful for slow and steady growth. "
+    quoteArray[2] = "She believed she could, so she did."
+    quoteArray[3] = "🐢 your speed doesn't matter, forward is forward."
+    quoteArray[4] = "🍍 be a pineapple: stand tall, wear a crown, and be sweet on the inside."
+    quoteArray[5] = "The world is your oyster."
+    quoteArray[6] =  "You are braver than you believe, stronger than you seem and smarter than you think."
+
+    var currentdate = new Date();
+    var quotenumber = currentdate.getDay();
+    document.getElementById('lbl').innerHTML = `<div> ${quoteArray[quotenumber]}</div>`;
+
+</script> 
+</html>
