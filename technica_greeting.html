@@ -1,0 +1,82 @@
+<html> 
+<head>
+    <title>Greeting Message</title> 
+    <style>
+.textStyle {
+    font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+    font-size: large;
+    color: #626262;
+    
+    text-align: center;
+    line-height: 1.5;
+
+}
+#date{
+    font-size:large;
+}
+#time{
+    font-size:large;
+}
+body{
+    background-color: rgb(234 228 242);
+}
+    </style>
+</head>
+<body>
+    <div id="lbl" class="textStyle" ></div>
+    <div id="time" class="textStyle"></div>
+</body>
+
+<script>
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    
+    var today = new Date();
+    var hrs = today.getHours();
+    var dayOfWeek = weekday[today.getDay()];
+    var date = dayOfWeek+" " + (today.getMonth()+1) + "/" + today.getDate() +'/'+today.getFullYear()  ;
+
+    var greet;
+
+    if (hrs < 12)
+        greet = '☀️ Good Morning ☀️';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Hey Finance Team!';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening 🌙';
+
+    function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+  // add a zero in front of numbers<10
+      m = checkTime(m);
+      s = checkTime(s);
+      var currTime = h + ":" + m + ":" + s;
+      document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+      t = setTimeout(function() {
+        startTime()
+      }, 500);
+    }
+    startTime();   
+    
+
+    document.getElementById('lbl').innerHTML =
+        greet+=`<div id="date"> It's ${date}</div>`;
+</script> 
+</html>
